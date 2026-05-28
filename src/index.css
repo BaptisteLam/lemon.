@@ -1,0 +1,67 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-dark text-cream font-sans;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-hero {
+    @apply max-w-7xl mx-auto px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-accent text-dark font-mono font-medium rounded-lg hover:bg-accent-light transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border border-cream text-cream hover:bg-cream hover:text-dark transition-colors;
+  }
+}
+
+/* Smooth scroll behavior */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom cursor */
+.custom-cursor {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
+.cursor-ring {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(213, 247, 35, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9998;
+}
