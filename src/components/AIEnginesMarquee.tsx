@@ -1,36 +1,29 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { LemonIcon } from './LemonIcon'
 
-const engines = [
-  { name: 'ChatGPT', logo: '🤖' },
-  { name: 'Perplexity', logo: '🔍' },
-  { name: 'Gemini', logo: '✨' },
-  { name: 'Claude', logo: '🧠' },
-  { name: 'Copilot', logo: '💻' },
-  { name: 'Mistral', logo: '🌪️' },
-]
+const LogoGroup: React.FC = () => (
+  <span className="mq-group">
+    <img className="mq-logo" src="assets/logos/chatgpt.png" alt="ChatGPT"/>
+    <svg className="lemon-bullet" viewBox="0 0 80 100" aria-hidden="true"><use href="#i-lemon"/></svg>
+    <img className="mq-logo" src="assets/logos/perplexity.png" alt="Perplexity"/>
+    <svg className="lemon-bullet" viewBox="0 0 80 100" aria-hidden="true"><use href="#i-lemon"/></svg>
+    <img className="mq-logo" src="assets/logos/gemini.png" alt="Gemini"/>
+    <svg className="lemon-bullet" viewBox="0 0 80 100" aria-hidden="true"><use href="#i-lemon"/></svg>
+    <img className="mq-logo" src="assets/logos/claude.png" alt="Claude"/>
+    <svg className="lemon-bullet" viewBox="0 0 80 100" aria-hidden="true"><use href="#i-lemon"/></svg>
+    <img className="mq-logo" src="assets/logos/copilot.png" alt="Copilot"/>
+    <svg className="lemon-bullet" viewBox="0 0 80 100" aria-hidden="true"><use href="#i-lemon"/></svg>
+    <img className="mq-logo" src="assets/logos/mistral.png" alt="Mistral"/>
+    <svg className="lemon-bullet" viewBox="0 0 80 100" aria-hidden="true"><use href="#i-lemon"/></svg>
+  </span>
+)
 
-export const AIEnginesMarquee: React.FC = () => {
-  return (
-    <section className="bg-dark py-12 border-y border-cream/10">
-      <div className="overflow-hidden">
-        <motion.div
-          animate={{ x: [0, -1200] }}
-          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
-          className="flex gap-8 whitespace-nowrap"
-        >
-          {[...engines, ...engines, ...engines].map((engine, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-3 font-mono text-sm text-cream/60 flex-shrink-0"
-            >
-              <LemonIcon size="sm" className="text-accent" />
-              <span>{engine.name}</span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  )
-}
+export const AIEnginesMarquee: React.FC = () => (
+  <div className="marquee" aria-hidden="true">
+    <div className="marquee-track">
+      <LogoGroup />
+      <span aria-hidden="true">
+        <LogoGroup />
+      </span>
+    </div>
+  </div>
+)
